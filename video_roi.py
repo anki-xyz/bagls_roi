@@ -32,7 +32,7 @@ class Interface(QWidget):
 
         self.zSlider = QSlider(Qt.Horizontal)
         self.zSlider.setMinimum(0)
-        self.zSlider.setMaximum(len(self.ims)-1)
+        self.zSlider.setMaximum(len(self.ims)-1 if len(self.ims) < 1000 else 999)
         self.zSlider.valueChanged.connect(self.changeZ)
         self.l.addWidget(self.zSlider)
 
